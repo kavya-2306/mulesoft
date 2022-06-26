@@ -10,23 +10,23 @@ public class RetrieveDataFromDb {
             Statement stmt = null;
 
             con = DriverManager
-                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDatabase.db");
+                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDb.db");
 
-            System.out.println("Database Connection Successful !!");
+            System.out.println("Database Connection Successful");
 
             stmt = con.createStatement();
 
-            ResultSet rs = stmt.executeQuery("SELECT * FROM MyMovies;");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Movies;");
 
             while (rs.next()) {
 
-                String movieName = rs.getString("MovieName");
+                String movieName = rs.getString("Movie");
 
-                String movieDirector = rs.getString("DirectorName");
+                String movieDirector = rs.getString("Director");
 
-                String maleActor = rs.getString("ActorName");
+                String maleActor = rs.getString("Actor");
 
-                String femaleActor = rs.getString("ActressName");
+                String femaleActor = rs.getString("Actress");
 
                 int releaseYear = rs.getInt("ReleaseYear");
 
