@@ -11,14 +11,14 @@ public class CreateMoviesDB {
             Statement statement = null;
 
             connection = DriverManager
-                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDatabase.db");
+                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDb.db");
 
-            System.out.println("Database Connection Successful !!");
+            System.out.println("Database Connection Successful");
 
             statement = connection.createStatement();
-            String qry = "CREATE TABLE MyMovies " + "(MovieName TEXT NOT NULL,"
-                    + " ActorName TEXT NOT NULL, " + " ActressName TEXT NOT NULL, "
-                    + " ReleaseYear INTEGER NOT NULL, " + " DirectorName TEXT NOT NULL )";
+            String qry = "CREATE TABLE Movies " + "(Movie TEXT NOT NULL,"
+                    + " Actor TEXT NOT NULL, " + " Actress TEXT NOT NULL, "
+                    + " ReleaseYear INTEGER NOT NULL, " + " Director TEXT NOT NULL )";
 
             statement.executeUpdate(qry);
 
