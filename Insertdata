@@ -10,29 +10,27 @@ public class InsertRecordIntoDb {
             Statement stmt = null;
 
             con = DriverManager
-                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDatabase.db");
+                    .getConnection("jdbc:sqlite:/C:\\sqlite\\MoviesDb.db");
 
-            System.out.println("Database Connection Successful !!");
+            System.out.println("Database Connection Successful");
 
             stmt = con.createStatement(); 
 
-            String query0 = "INSERT INTO MyMovies values ('bigil','vijay','nayanathara', 2019,'atlee');";
+            String query0 = "INSERT INTO Movies values ('antesundharaniki','Nani','nazriya', 2022,'vivek atheya');";
             stmt.executeUpdate(query0);
 
-            String query1 = "INSERT INTO MyMovies values ('master','vijay','malavika', 2020,'lokesh');";
+            String query1 = "INSERT INTO Movies values ('radheshyam','prabhas','pooja', 2022,'radha');";
             stmt.executeUpdate(query1); 
 
-            String query2 = "INSERT INTO MyMovies values ('beast','vijay','pooja',2022,'nelson');";
+            String query2 = "INSERT INTO Movies values ('jathirathanlu','naveen','faria',2020,'anudeep');";
             stmt.executeUpdate(query2); 
 
-            String query3 = "INSERT INTO MyMovies values ('jersey','nani','Shradda',2018,'gowtham');";
+            String query3 = "INSERT INTO Movies values ('jersey','nani','Shradda',2018,'gowtham');";
             stmt.executeUpdate(query3); 
 
-            String query4 = "INSERT INTO MyMovies values ('don','sivakarthikeya','priyanka',2022,'C.B chakravarthi');";
-            stmt.executeUpdate(query4);
-
-            String query5 = "INSERT INTO MyMovies values ('karnan','dhanush','rajishavijayan',2019,'mariselvaraj');";
-            stmt.executeUpdate(query5);
+            String query4 = "INSERT INTO Movies values ('don','sivakarthikeya','priyanka',2022,'C.B chakravarthi');";
+            stmt.executeUpdate(query4)
+            
             stmt.close();
 
             con.close();   
